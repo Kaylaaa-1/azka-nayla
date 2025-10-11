@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Adat Nusantara Wedding Theme */
+    --background: 40 40% 96%;
+    --foreground: 0 60% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 60% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 60% 20%;
+
+    /* Primary: Rich Maroon */
+    --primary: 0 60% 30%;
+    --primary-foreground: 40 40% 96%;
+
+    /* Secondary: Elegant Gold */
+    --secondary: 45 80% 55%;
+    --secondary-foreground: 0 60% 20%;
+
+    /* Muted: Soft Cream */
+    --muted: 40 40% 92%;
+    --muted-foreground: 0 20% 40%;
+
+    /* Accent: Bright Gold */
+    --accent: 45 90% 60%;
+    --accent-foreground: 0 60% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 40 40% 96%;
+
+    --border: 40 30% 85%;
+    --input: 40 30% 85%;
+    --ring: 45 80% 55%;
+
+    --radius: 0.75rem;
+    
+    /* Custom wedding colors */
+    --gold: 45 80% 55%;
+    --maroon: 0 60% 30%;
+    --cream: 40 40% 92%;
+    --dark-maroon: 0 60% 20%;
+    
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(45 80% 65%), hsl(45 80% 45%));
+    --gradient-maroon: linear-gradient(135deg, hsl(0 60% 40%), hsl(0 60% 25%));
+    --gradient-elegant: linear-gradient(180deg, hsl(40 40% 96%), hsl(40 40% 92%));
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 40px -10px hsl(0 60% 30% / 0.3);
+    --shadow-gold: 0 0 30px hsl(45 80% 55% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 60% 15%;
+    --foreground: 40 40% 96%;
+
+    --card: 0 60% 20%;
+    --card-foreground: 40 40% 96%;
+
+    --popover: 0 60% 20%;
+    --popover-foreground: 40 40% 96%;
+
+    --primary: 45 80% 55%;
+    --primary-foreground: 0 60% 20%;
+
+    --secondary: 0 60% 25%;
+    --secondary-foreground: 40 40% 96%;
+
+    --muted: 0 40% 25%;
+    --muted-foreground: 40 30% 70%;
+
+    --accent: 45 90% 60%;
+    --accent-foreground: 0 60% 20%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 40 40% 96%;
+
+    --border: 0 40% 30%;
+    --input: 0 40% 30%;
+    --ring: 45 80% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-script {
+    font-family: 'Great Vibes', cursive;
+  }
+  
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .batik-pattern {
+    background-image: 
+      repeating-linear-gradient(45deg, transparent, transparent 10px, hsl(var(--secondary) / 0.1) 10px, hsl(var(--secondary) / 0.1) 20px),
+      repeating-linear-gradient(-45deg, transparent, transparent 10px, hsl(var(--primary) / 0.05) 10px, hsl(var(--primary) / 0.05) 20px);
+  }
+  
+  .ornament-border {
+    border-image: linear-gradient(90deg, 
+      hsl(var(--secondary)), 
+      hsl(var(--primary)), 
+      hsl(var(--secondary))
+    ) 1;
+  }
+}
